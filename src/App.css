@@ -1,38 +1,477 @@
-.App {
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  max-width: 100vw;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  line-height: 1.5;
+  background-color: #282e3f; /* Fondo oscuro */
+  color: #f1f1f1; /* Texto claro */
+  font-family: 'Segoe UI', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+/* Banner principal */
+.banner {
+  background-color: #2c3e50;
+  color: white;
   text-align: center;
+  padding: 40px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.banner img {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Header */
+.encabezado {
+  background: linear-gradient(to right, #1f2533, #2c3e50);
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.contenedor-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00aaff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.subtitulo {
+  font-size: 1.3em;
+  color: #e0e0e0;
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+
+/* Navegación */
+nav {
+  background-color: transparent; /* Elimina el fondo rectangular feo */
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* opcional para suavidad */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px); /* efecto moderno si tu proyecto lo permite */
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
   color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
+/* Sección de inicio responsiva y adaptativa */
+.seccion {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1em;
+  box-sizing: border-box;
+}
+/* Footer */
+.pie {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.redes a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.redes a img:hover {
+  transform: scale(1.2);
+}
+
+.mensaje-final {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Tabla */
+table, th, td {
+  border: 1px solid #555;
+   font-size: 1.2em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background-color: #2e3447;
+  color: #f1f1f1;
+}
+
+th {
+  background-color: #3a3f55;
+  color: #f1f1f1;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+
+/* Formulario */
+form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+input, select, button {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #1e2533;
+  color: #f1f1f1;
+}
+
+button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1f5f87;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-contenido {
+  background-color: #2b2f3b;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: #f1f1f1;
+  box-shadow: 0px 0px 10px black;
+}
+
+.cerrar {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #f1f1f1;
+}
+
+.boton-descarga {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.boton-descarga:hover {
+  background-color: #218838;
+}
+
+.btn-suscribirse-directo {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-suscribirse-directo:hover {
+  background-color: #0056b3;
+}
+
+/* Funcionalidad */
+.funcionalidad {
+  background: #2c3244;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  color: #f1f1f1;
+}
+
+/* Responsive ajustes */
+@media (max-width: 600px) {
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  section {
+    margin: 10px;
+  }
+
+  .tabla-responsiva table {
+    font-size: 14px;
+  }
+}
+
+/* Ajustes generales */
+* {
+  box-sizing: border-box;
+}
+
+.seccion li {
+  font-size: 1.3em;
+}
+
+.seccion h2 {
+  font-size: 1.3em;
+}
+
+.seccion p {
+  font-size: 1.3em;
+}
+
+.seccion td {
+  font-size: 1.3em;
+}
+
+.seccion th {
+  font-size: 1.3em;
+}
+
+.seccion label {
+  font-size: 1.3em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, p, li {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+ul {
+  padding-left: 1.2em;
+  max-width: 100%;
+}
+
+.ver-mas {
+  background-color: #5266c0;
+  color: white;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ver-mas:hover {
+  background-color: #070606;
+}
+
+.funcionalidades {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.funcionalidades.animar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+#planes {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#planes table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  font-size: 1em;
+}
+
+#planes th, #planes td {
+  padding: 0.5em;
+  text-align: center;
+  word-break: break-word;
+  white-space: normal;
+}
+
+#planes button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 3. Ajusta secciones para que se adapten al espacio sin salirse */
+section, .seccion {
+  padding: 1em;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* 4. Botones responsivos sin desbordar */
+a.boton-descarga {
+  display: inline-block;
+  max-width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+/* 7. Mejora de títulos largos para que no se corten */
+h2, h3 {
+  word-break: break-word;
+}
+
+/* 8. Evita problemas con emojis y saltos de línea */
+.funcionalidad h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  flex-wrap: wrap;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1, h2, h3, p, li {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+ul {
+  padding-left: 1.2em;
+  max-width: 100%;
+}
+h2, h3 {
+  word-break: break-word;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }}
+
+  
+#faq {
+  background-color: #2e3447;
+  color: #f1f1f1;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+#faq h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+#faq ul {
+  list-style: none;
+  padding: 0;
+}
+
+#faq li {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+
+/* Animación de entrada suave */
+.seccion-con-animacion {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Definición de la animación */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
