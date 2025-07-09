@@ -23,6 +23,10 @@ function Encabezado({ onMostrarSeccion }) {
           <li><button onClick={() => onMostrarSeccion('simulador')}>Servicios Extra</button></li>
           <li><button onClick={() => onMostrarSeccion('faq')}>Preguntas Frecuentes</button></li>
           <li><button onClick={() => onMostrarSeccion('gestion')}>Gestion</button></li>
+          <li><button onClick={() => onMostrarSeccion('ubicacion')}>Ubicación</button></li>
+          
+
+
         </ul>
       </nav>
     </header>

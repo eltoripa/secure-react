@@ -1,5 +1,4 @@
 import React from 'react';
-
 const QuienesSomos = () => {
   return (
     //La seccion muestra la informacion sobre el equipo de trabajo y el tiempo dedicado a ofrecer un buen servicio.

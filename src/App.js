@@ -10,6 +10,7 @@ import ModalSuscripcion from './Componentes/ModalSuscripcion';
 import RegistroUsuarios from './Componentes/RegistroUsuarios';
 import Footer from './Componentes/Footer';
 import GestionAdmin from './Componentes/GestionAdmin';
+import Mapa from './Componentes/Mapa';
 import './App.css';
 
 function App() {
@@ -109,6 +110,9 @@ function App() {
       ))}
       {seccionVisible === 'faq' && getSeccionConAnimacion(<FAQ />)}
       {seccionVisible === 'gestion' && getSeccionConAnimacion( <GestionAdmin />)}
+      
+      {seccionVisible === 'ubicacion' && getSeccionConAnimacion (<Mapa />)}
+
 
       {/** Se muestra el modal al hacer click en suscribirse o simulador. Identifica el plan elejido,la funcion de cerrar el modal y de guardar al usuario */}
       {mostrarModal && (
